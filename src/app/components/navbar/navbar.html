@@ -1,0 +1,194 @@
+<header
+  class="sticky top-0 z-[50] w-full bg-white/90 dark:bg-[#14141F]/90 mt-5 rounded-2xl shadow-lg"
+  data-aos="fade-down"
+>
+  <div class="max-w-7xl mx-auto px-7">
+    <nav
+      class="flex items-center justify-between flex-wrap py-8 rounded-2xl sm:flex-nowrap"
+    >
+      <!-- Logo -->
+      <a href="/" class="flex-shrink-0">
+        <img
+          src="assets/img/logo-alexander-light.png"
+          alt="logo"
+          class="w-36 block dark:hidden"
+        />
+        <img
+          src="assets/img/logo-alexander-dark.png"
+          alt="logo dark"
+          class="w-36 hidden dark:block"
+        />
+      </a>
+
+      <!-- Botón hamburguesa y toggle juntos en móvil -->
+      <div class="flex items-center gap-4 sm:hidden">
+        <!-- Botón hamburguesa -->
+        <button
+          type="button"
+          class="hs-collapse-toggle text:black dark:text-white focus:outline-none"
+          data-hs-collapse="#nav-content"
+          aria-controls="nav-content"
+          aria-label="Toggle navigation"
+        >
+          <!-- Icono hamburguesa -->
+          <svg
+            class="hs-collapse-open:hidden w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+          <!-- Icono cerrar -->
+          <svg
+            class="hs-collapse-open:block hidden w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18 6L6 18" />
+            <path d="M6 6L18 18" />
+          </svg>
+        </button>
+
+        <!-- Botones modo oscuro para móvil -->
+        <div class="flex items-center gap-2">
+          <!-- Activar modo oscuro -->
+          <button
+            type="button"
+            class="hs-dark-mode-active:hidden block hs-dark-mode cursor-pointer hover:text-indigo-400 dark:text-white"
+            data-hs-theme-click-value="dark"
+            aria-label="Activar modo oscuro"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+          </button>
+
+          <!-- Activar modo claro -->
+          <button
+            type="button"
+            class="hs-dark-mode-active:block hidden hs-dark-mode cursor-pointer text-white hover:text-yellow-400"
+            data-hs-theme-click-value="light"
+            aria-label="Activar modo claro"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2 M12 20v2 M4.93 4.93l1.41 1.41 M17.66 17.66l1.41 1.41 M2 12h2 M20 12h2 M6.34 17.66l-1.41 1.41 M19.07 4.93l-1.41 1.41"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Menú de navegación -->
+      <div
+        id="nav-content"
+        class="hs-collapse hidden overflow-hidden transition-all duration-300 w-full sm:flex sm:items-center sm:justify-center sm:w-auto mt-4 sm:mt-0"
+      >
+        <ul
+          class="flex flex-col sm:flex-row items-center text-center sm:gap-6 gap-8"
+        >
+          <li>
+            <a
+              href="#home"
+              class="hover:text-[#7946e3] relative font-bold text-sm uppercase py-2 px-3 dark:text-white text-gray-900 border-b-4 border-transparent hover:border-purple-600 transition-all duration-300 active:border-purple-600"
+              >INICIO</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="hover:text-[#7946e3] relative font-bold text-sm uppercase py-2 px-3 dark:text-white text-gray-900 border-b-4 border-transparent hover:border-purple-600 transition-all duration-300"
+              >SOBRE MI</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="hover:text-[#7946e3] relative font-bold text-sm uppercase py-2 px-3 dark:text-white text-gray-900 border-b-4 border-transparent hover:border-purple-600 transition-all duration-300"
+              >Habilidades</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="hover:text-[#7946e3] relative font-bold text-sm uppercase py-2 px-3 dark:text-white text-gray-900 border-b-4 border-transparent hover:border-purple-600 transition-all duration-300"
+              >PROYECTOS</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Toggle modo oscuro en escritorio -->
+      <div class="hidden sm:flex items-center gap-2">
+        <!-- Botones modo oscuro aquí igual -->
+        <!-- Activar modo oscuro -->
+        <button
+          type="button"
+          class="hs-dark-mode-active:hidden block hs-dark-mode cursor-pointer hover:text-indigo-400 dark:text-white"
+          data-hs-theme-click-value="dark"
+          aria-label="Activar modo oscuro"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <!-- Activar modo claro -->
+        <button
+          type="button"
+          class="hs-dark-mode-active:block hidden hs-dark-mode cursor-pointer text-white hover:text-yellow-400"
+          data-hs-theme-click-value="light"
+          aria-label="Activar modo claro"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2 M12 20v2 M4.93 4.93l1.41 1.41 M17.66 17.66l1.41 1.41 M2 12h2 M20 12h2 M6.34 17.66l-1.41 1.41 M19.07 4.93l-1.41 1.41"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

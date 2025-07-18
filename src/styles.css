@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "preline/variants.css";
+@source "../node_modules/preline/dist/*.js";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.container-custom {
+  max-width: 900px; /* o 960px o lo que prefieras */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}

@@ -1,0 +1,109 @@
+<div class="flex flex-col items-center justify-center text-center px-4">
+  <h2 class="text-4xl font-bold text-black dark:text-white mb-4">
+    Habilidades
+  </h2>
+</div>
+
+<div class="py-12">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6"
+  >
+    <div
+      *ngFor="let categoria of categorias"
+      data-aos="zoom-in-up"
+      class="bg-white dark:bg-[#14141F] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-start text-center min-h-[300px]"
+    >
+      <h3 class="text-xl font-semibold dark:text-white mb-4">
+        {{ categoria.title }}
+      </h3>
+      <div class="grid grid-cols-3 gap-4">
+        <div
+          *ngFor="let skill of categoria.skills"
+          class="hs-tooltip [--placement:top] inline-block relative"
+        >
+          <img
+            [src]="
+              skill.icon.includes('assets')
+                ? skill.icon
+                : 'https://skillicons.dev/icons?i=' + skill.icon
+            "
+            [alt]="skill.name"
+            class="w-full max-w-[240px] cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300"
+          />
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs dark:bg-neutral-700 -translate-y-1"
+            role="tooltip"
+          >
+            {{ skill.name }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      data-aos="zoom-in-up"
+      class="bg-white dark:bg-[#14141F] rounded-2xl shadow-lg p-6 flex flex-col items-center justify-start text-center min-h-[300px]"
+    >
+      <h3 class="text-xl font-semibold dark:text-white mb-4">Mòvil</h3>
+      <div class="grid grid-cols-3 gap-4">
+        <!-- Postgres -->
+        <div class="hs-tooltip [--placement:top] inline-block relative">
+          <img
+            src="assets/img/ionic.png"
+            alt="Ionic"
+            class="w-13 max-w-[240px] bg-[#242938] p-2 rounded-xl cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300"
+          />
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs dark:bg-neutral-700 -translate-y-1"
+            role="tooltip"
+          >
+            Ionic
+          </span>
+        </div>
+
+        <!-- Flutter -->
+        <div class="hs-tooltip [--placement:top] inline-block relative">
+          <img
+            src="https://skillicons.dev/icons?i=flutter"
+            alt="Flutter"
+            class="w-full max-w-[240px] cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300"
+          />
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs dark:bg-neutral-700 -translate-y-1"
+            role="tooltip"
+          >
+            Flutter
+          </span>
+        </div>
+
+        <!--  Android Studio -->
+        <div class="hs-tooltip [--placement:top] inline-block relative">
+          <img
+            src="https://skillicons.dev/icons?i=androidstudio"
+            alt="Android Studio"
+            class="w-full max-w-[240px] cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300"
+          />
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs dark:bg-neutral-700 -translate-y-1"
+            role="tooltip"
+          >
+            Android Studio
+          </span>
+        </div>
+        <!--  Dart -->
+        <div class="hs-tooltip [--placement:top] inline-block relative">
+          <img
+            src="https://skillicons.dev/icons?i=dart"
+            alt="Dart"
+            class="w-full max-w-[240px] cursor-pointer hover:-translate-y-1 hover:scale-110 duration-300"
+          />
+          <span
+            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded-md shadow-2xs dark:bg-neutral-700 -translate-y-1"
+            role="tooltip"
+          >
+            Dart
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
