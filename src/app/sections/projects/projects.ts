@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Projects {
   imagenSeleccionada: string | null = null;
+  cantidadProyectosVisible: number = 4; // muestra inicialmente 4
+
   proyectos = [
     {
       titulo: 'dvinternet',
@@ -18,7 +20,7 @@ export class Projects {
       tecnologias: ['php', 'css', 'html', 'Mysql', 'Bootstrap'],
       fecha: '20 mayo 2022',
       demo: '#',
-      github: '#',
+      github: '',
     },
     {
       titulo: 'dvinternet',
@@ -57,5 +59,9 @@ export class Projects {
 
   cerrarModal() {
     this.imagenSeleccionada = null;
+  }
+  verMasProyectos(): void {
+    const cantidadExtra = 4;
+    this.cantidadProyectosVisible += cantidadExtra;
   }
 }
