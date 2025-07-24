@@ -52,6 +52,16 @@ export class Projects {
       demo: '#',
       github: '#',
     },
+    {
+      titulo: 'Rick and Morty Explorer',
+      descripcion:
+        'Aplicación web desarrollada con Angular y TailwindCSS que consume la API de Rick and Morty. Permite explorar personajes, episodios y ubicaciones con filtros avanzados, paginación y modales interactivos.',
+      imagen: 'assets/img/rickandmorty.png',
+      tecnologias: ['Angular', 'TailwindCSS', 'TypeScript'],
+      fecha: '20 Julio 2025',
+      demo: 'https://rickandmorty-api-two.vercel.app/',
+      github: 'https://github.com/Alexadr7u7/rickandmorty-api.git',
+    },
   ];
   abrirModal(url: string) {
     this.imagenSeleccionada = url;
