@@ -62,6 +62,16 @@ export class Projects {
       demo: 'https://rickandmorty-api-two.vercel.app/',
       github: 'https://github.com/Alexadr7u7/rickandmorty-api.git',
     },
+    {
+      titulo: 'Galería de Fotografías',
+      descripcion:
+        'Sitio web desarrollado con Astro y TailwindCSS, diseñado como una galería estética de imágenes personales. Ofrece un diseño responsivo, optimización de carga y una experiencia visual fluida enfocada en la inspiración visual y los paisajes.',
+      imagen: 'assets/img/galeria.png',
+      tecnologias: ['Astro', 'TailwindCSS', 'JavaScript'],
+      fecha: '29 Julio 2025',
+      demo: 'https://gallery-zeta-swart.vercel.app/',
+      github: 'https://github.com/Alexadr7u7/gallery.git',
+    },
   ];
   abrirModal(url: string) {
     this.imagenSeleccionada = url;
