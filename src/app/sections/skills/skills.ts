@@ -27,6 +27,7 @@ export class Skills {
         { name: 'TailwindCSS', icon: 'tailwind' },
         { name: 'TypeScript', icon: 'ts' },
         { name: 'JavaScript', icon: 'js' },
+        { name: 'Astro', icon: 'Astro' },
       ],
     },
     {
