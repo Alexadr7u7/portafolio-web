@@ -19,7 +19,7 @@ export class Projects {
       imagen: 'assets/img/dvinternet.png',
       tecnologias: ['php', 'css', 'html', 'Mysql', 'Bootstrap'],
       fecha: '20 mayo 2022',
-      demo: '#',
+      demo: 'https://dvinternet.com.mx',
       github: '',
     },
     {

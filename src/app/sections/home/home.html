@@ -1,125 +1,105 @@
-<div class="pt-20 relative flex items-center justify-start">
-  <div class="flex flex-wrap items-center justify-between w-full">
-    <!-- Texto de portada -->
-    <div class="w-full md:w-1/2 text-white px-4 sm:px-6 lg:px-8">
-      <h1
-        class="text-[26px] sm:text-[30px] lg:text-[36px] font-bold text-black dark:text-white mb-2"
-        data-aos="fade-down"
-      >
-        Hola, mi nombre es Alexander Lazcano
-      </h1>
+<div class="pt-6 relative flex flex-col items-center text-center px-4">
+  <!-- Imagen -->
+  <div data-aos="zoom-in-down">
+    <img
+      src="assets/img/alexander.jpg"
+      alt="Alexander"
+      class="shadow-2xl hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out w-52 h-52 object-cover rounded-full mx-auto border-8 border-white dark:border-[#14141F]"
+    />
+  </div>
 
-      <p
-        class="typewriter text-[18px] sm:text-[20px] font-bold text-[#7946e3] mb-6 sm:mb-8"
-        data-aos="zoom-in-down"
-      >
-        Desarrollador Fullstack Jr
-      </p>
+  <!-- Texto -->
+  <div class="text-white mt-6 max-w-xl">
+    <h1
+      class="text-[26px] sm:text-[30px] lg:text-[36px] font-bold text-black dark:text-white mb-2"
+      data-aos="fade-down"
+    >
+      Hola, mi nombre es Alexander Lazcano
+    </h1>
 
-      <p
-        class="text-black dark:text-white text-[16px] sm:text-[18px] font-light leading-relaxed"
-        data-aos="zoom-in-down"
-      >
-        Creo aplicaciones web modernas y responsivas con una interfaz de usuario
-        limpia y una experiencia de usuario fluida que combina diseño y código
-        para crear experiencias que se sienten intuitivas, rápidas y agradables
-        de usar.
-      </p>
-
-      <!-- Redes Sociales -->
-      <div
-        class="flex flex-wrap items-center gap-3 sm:gap-4 mt-6"
-        data-aos="zoom-in-down"
-      >
-        <p
-          class="text-black dark:text-white font-light text-[16px] sm:text-[18px]"
-        >
-          Sígueme en:
-        </p>
-
-        <!-- Íconos -->
-        <a
-          class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
-          href="https://github.com/Alexadr7u7"
-          target="_blank"
-          aria-label="GitHub"
-          data-hs-tooltip="true"
-        >
-          <i class="fab fa-github text-lg"></i>
-        </a>
-
-        <a
-          class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
-          href="https://www.linkedin.com/in/alan-alexander-lazcano-romero-000602374/"
-          target="_blank"
-          aria-label="LinkedIn"
-          data-hs-tooltip="true"
-        >
-          <i class="fab fa-linkedin text-lg"></i>
-        </a>
-
-        <a
-          class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
-          href="https://www.instagram.com/alexanderlr_09?igsh=cjNzOHhvNnVnNWlk"
-          target="_blank"
-          aria-label="Instagram"
-          data-hs-tooltip="true"
-        >
-          <i class="fab fa-instagram text-lg"></i>
-        </a>
-        <a
-          class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
-          href="mailto:alexander.lazcano@outlook.com"
-          target="_blank"
-          aria-label="gmail"
-          data-hs-tooltip="true"
-        >
-          <i class="fas fa-envelope text-lg"></i>
-        </a>
-      </div>
-
-      <!-- Botón CV -->
-      <div class="mt-6" data-aos="zoom-in-down">
-        <!-- Botón visible -->
-        <button
-          *ngIf="!descargando"
-          (click)="descargarCV()"
-          class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center gap-2 border-2 border-[#7946e3] text-black dark:text-white font-semibold text-sm sm:text-base py-2 px-4 rounded-md transition"
-        >
-          <i class="far fa-envelope"></i>
-          <span>Descarga mi CV</span>
-        </button>
-
-        <!-- Botón cargando -->
-        <button
-          *ngIf="descargando"
-          class="flex justify-center items-center border-2 border-[#7946e3] text-black dark:text-white font-semibold text-sm sm:text-base py-2 px-4 rounded-md w-40 h-10"
-          type="button"
-          disabled
-        >
-          <span
-            class="animate-spin border-t-2 border-black dark:border-white rounded-full w-4 h-4"
-          ></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Imagen -->
-    <div
-      class="w-full md:w-2/5 text-center hidden md:block px-4"
+    <p
+      class="typewriter text-[18px] sm:text-[20px] font-bold text-[#7946e3] mb-6 sm:mb-8"
       data-aos="zoom-in-down"
     >
-      <img
-        src="assets/img/alexander.jpg"
-        alt="BMO"
-        class="shadow-2xl hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out w-70 h-70 object-cover rounded-full mx-auto border-8 border-white dark:border-[#14141F]"
-      />
+      Desarrollador Fullstack Jr
+    </p>
+
+    <!-- Redes Sociales -->
+    <div
+      class="flex flex-wrap justify-center gap-3 sm:gap-4"
+      data-aos="zoom-in-down"
+    >
+      <!-- Íconos -->
+      <a
+        class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
+        href="https://github.com/Alexadr7u7"
+        target="_blank"
+        aria-label="GitHub"
+        data-hs-tooltip="true"
+      >
+        <i class="fab fa-github text-lg"></i>
+      </a>
+
+      <a
+        class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
+        href="https://www.linkedin.com/in/alan-alexander-lazcano-romero-000602374/"
+        target="_blank"
+        aria-label="LinkedIn"
+        data-hs-tooltip="true"
+      >
+        <i class="fab fa-linkedin text-lg"></i>
+      </a>
+
+      <a
+        class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
+        href="https://www.instagram.com/alexanderlr_09?igsh=cjNzOHhvNnVnNWlk"
+        target="_blank"
+        aria-label="Instagram"
+        data-hs-tooltip="true"
+      >
+        <i class="fab fa-instagram text-lg"></i>
+      </a>
+
+      <a
+        class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center justify-center hs-tooltip bg-[#14141F] dark:bg-white text-white dark:text-black p-2 rounded-full w-10 h-10"
+        href="mailto:alexander.lazcano@outlook.com"
+        target="_blank"
+        aria-label="gmail"
+        data-hs-tooltip="true"
+      >
+        <i class="fas fa-envelope text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Botón CV -->
+    <div class="mt-6" data-aos="zoom-in-down">
+      <!-- Botón visible -->
+      <button
+        *ngIf="!descargando"
+        (click)="descargarCV()"
+        class="hover:-translate-y-1 hover:scale-110 duration-300 ease-in-out flex items-center gap-2 border-2 border-[#7946e3] text-black dark:text-white font-semibold text-sm sm:text-base py-2 px-4 rounded-md transition mx-auto"
+      >
+        <i class="far fa-envelope"></i>
+        <span>Descarga mi CV</span>
+      </button>
+
+      <!-- Botón cargando -->
+      <button
+        *ngIf="descargando"
+        class="flex justify-center items-center border-2 border-[#7946e3] text-black dark:text-white font-semibold text-sm sm:text-base py-2 px-4 rounded-md w-40 h-10 mx-auto"
+        type="button"
+        disabled
+      >
+        <span
+          class="animate-spin border-t-2 border-black dark:border-white rounded-full w-4 h-4"
+        ></span>
+      </button>
     </div>
   </div>
 </div>
 
 <!-- Flecha -->
-<div class="flex justify-center items-center pt-25" data-aos="fade-down">
+<div class="flex justify-center items-center p-6" data-aos="fade-down">
   <a
     href="#about"
     class="text-black dark:text-white text-[30px] font-bold animate-bounce hover:text-[33px] transition-all"
