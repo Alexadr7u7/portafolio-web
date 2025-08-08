@@ -6,11 +6,6 @@
   width: 27ch;
   overflow: hidden;
   animation: typing 2.5s steps(12), blink 1s step-end infinite;
-
-  /* 👇 Centramos el bloque horizontalmente */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 @keyframes typing {
