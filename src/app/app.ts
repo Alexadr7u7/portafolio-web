@@ -9,11 +9,11 @@ import { Formacion } from './sections/formacion/formacion';
 import { Experience } from './sections/experience/experience';
 import { About } from './sections/about/about';
 import { ScrollTop } from './components/scroll-top/scroll-top';
+// import { Contact } from './sections/contact/contact';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     Navbar,
     Footer,
     Home,
@@ -23,6 +23,7 @@ import { ScrollTop } from './components/scroll-top/scroll-top';
     Experience,
     About,
     ScrollTop,
+    // Contact,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',

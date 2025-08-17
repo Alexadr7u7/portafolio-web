@@ -72,6 +72,16 @@ export class Projects {
       demo: 'https://gallery-zeta-swart.vercel.app/',
       github: 'https://github.com/Alexadr7u7/gallery.git',
     },
+    {
+      titulo: 'Mathematical battle',
+      descripcion:
+        'Videojuego educativo desarrollado en Unity 2D, diseñado para que niños de primaria practiquen operaciones matemáticas básicas como suma, resta, multiplicación y división. Combina diversión con aprendizaje mediante retos interactivos, personajes animados y niveles progresivos que refuerzan el pensamiento lógico.',
+      imagen: 'assets/img/videogame.png',
+      tecnologias: ['Unity 2D', 'C#'],
+      fecha: '15 diciembre 2024',
+      demo: '',
+      github: '',
+    },
   ];
   abrirModal(url: string) {
     this.imagenSeleccionada = url;
