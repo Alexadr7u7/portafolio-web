@@ -1,0 +1,32 @@
+<div
+  class="fixed inset-0 flex items-center justify-center bg-[#EFF2FB] dark:bg-[#060610] text-white z-100"
+  [class.opacity-0]="!show"
+  [class.pointer-events-none]="!show"
+>
+  <div class="flex flex-col items-center animate-fade-in">
+    <!-- Logo con imagen -->
+
+    <img
+      src="assets/img/logo-alexander-light.png"
+      alt="logo"
+      class="w-50 object-contain rounded-full shadow-lg block dark:hidden"
+    />
+    <img
+      src="assets/img/logo-alexander-dark.png"
+      alt="logo dark"
+      class="w-50 object-contain rounded-full shadow-lg hidden dark:block"
+    />
+    <!-- Loader -->
+    <div class="mt-6 flex space-x-2">
+      <div
+        class="w-3 h-3 dark:bg-white bg-[#060610] rounded-full animate-bounce"
+      ></div>
+      <div
+        class="w-3 h-3 dark:bg-white bg-[#060610] rounded-full animate-bounce [animation-delay:-0.2s]"
+      ></div>
+      <div
+        class="w-3 h-3 dark:bg-white bg-[#060610] rounded-full animate-bounce [animation-delay:-0.4s]"
+      ></div>
+    </div>
+  </div>
+</div>

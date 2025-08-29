@@ -6,9 +6,8 @@
     Experiencia
   </h2>
 </div>
-<!-- Timeline con Preline adaptado -->
+
 <div class="py-16">
-  <!-- Timeline Container -->
   <div class="relative">
     <!-- Línea vertical -->
     <div
@@ -16,8 +15,11 @@
       data-aos="zoom-in-down"
     ></div>
 
-    <!-- Entrada 1 -->
-    <div class="relative pl-12 mb-12">
+    <!-- Iteramos experiencias -->
+    <div
+      class="relative pl-12 mb-12"
+      *ngFor="let exp of experiencias; let last = last"
+    >
       <!-- Icono de punto -->
       <div
         class="absolute left-2 top-1.5 w-4 h-4 rounded-full bg-[#7946e3] z-10"
@@ -30,77 +32,25 @@
         data-aos="zoom-in-down"
       >
         <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Mayo 2022 – Agosto 2022
+          {{ exp.fecha }}
         </p>
         <h3
           class="text-lg md:text-xl font-bold text-gray-800 dark:text-white flex items-center gap-2"
         >
-          dvinternet
+          {{ exp.empresa }}
         </h3>
-        <span class="font-semibold text-gray-500 dark:text-gray-400"
-          >Desarrollador Fullstack</span
-        >
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-3">
-          Lideré el diseño y desarrollo de un sistema integral de gestión de
-          clientes utilizando Laravel y Angular, que permitió optimizar
-          significativamente los procesos internos administrativos de la
-          empresa. Este sistema facilitó la automatización de tareas repetitivas
-          y mejoró la eficiencia en el manejo de la información, contribuyendo a
-          una reducción notable de errores y tiempos de respuesta.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
-          Además, diseñé y desarrollé la página web corporativa utilizando
-          tecnologías como HTML, CSS y PHP, implementando un diseño responsivo y
-          accesible que mejoró la experiencia de usuario y fortaleció la imagen
-          digital de la empresa. Esta iniciativa resultó en un aumento
-          considerable en la captación de nuevos clientes y en la visibilidad
-          online de la marca.
-        </p>
-      </div>
-    </div>
+        <span class="font-semibold text-gray-500 dark:text-gray-400">{{
+          exp.puesto
+        }}</span>
 
-    <!-- Entrada 2 -->
-    <div class="relative pl-12">
-      <!-- Icono de punto -->
-      <div
-        class="absolute left-2 top-1.5 w-4 h-4 rounded-full bg-[#7946e3] z-10"
-        data-aos="zoom-in-down"
-      ></div>
-
-      <!-- Tarjeta -->
-      <div
-        class="bg-white dark:bg-[#14141F] border border-gray-200 dark:border-neutral-700 rounded-xl p-6 shadow-md"
-        data-aos="zoom-in-down"
-      >
-        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Enero 2025 – Abril 2025
-        </p>
-        <h3
-          class="text-lg md:text-xl font-bold text-gray-800 dark:text-white flex items-center gap-2"
-        >
-          DTI Consultores
-        </h3>
-        <span class="font-semibold text-gray-500 dark:text-gray-400"
-          >Desarrollador Fullstack</span
-        >
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-3">
-          Participé en el desarrollo completo de un sistema avanzado de reservas
-          para hoteles, incorporando funcionalidades robustas como autenticación
-          segura de usuarios, gestión dinámica de habitaciones y control en
-          tiempo real de la disponibilidad. Utilicé Angular para construir un
-          frontend interactivo y responsivo, mientras que el backend se
-          desarrolló con Laravel siguiendo los principios RESTful, garantizando
-          una arquitectura escalable y mantenible.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
-          Paralelamente, diseñé e implementé una aplicación móvil dirigida a
-          usuarios del sector fitness, que permite el seguimiento detallado de
-          rutinas de entrenamiento, planes personalizados de alimentación y
-          monitoreo del progreso físico. La app fue desarrollada con Ionic para
-          ofrecer una experiencia multiplataforma fluida, respaldada por un
-          backend sólido en Laravel que asegura la integridad y seguridad de los
-          datos del usuario.
-        </p>
+        <div class="mt-3 space-y-2">
+          <p
+            *ngFor="let desc of exp.descripcion"
+            class="text-sm text-gray-600 dark:text-gray-300"
+          >
+            {{ desc }}
+          </p>
+        </div>
       </div>
     </div>
   </div>

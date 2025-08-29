@@ -9,6 +9,8 @@ import { Formacion } from './sections/formacion/formacion';
 import { Experience } from './sections/experience/experience';
 import { About } from './sections/about/about';
 import { ScrollTop } from './components/scroll-top/scroll-top';
+import { SplashScreen } from './components/splash-screen/splash-screen';
+import { CommonModule } from '@angular/common';
 // import { Contact } from './sections/contact/contact';
 
 @Component({
@@ -23,7 +25,8 @@ import { ScrollTop } from './components/scroll-top/scroll-top';
     Experience,
     About,
     ScrollTop,
-    // Contact,
+    SplashScreen,
+    CommonModule,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
