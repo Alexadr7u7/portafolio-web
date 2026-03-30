@@ -8,12 +8,10 @@ import Bootstrap from "./icons/bootstrap.astro";
 import Ionic from "./icons/ionic.astro";
 import AstroIcon from "./icons/astroicon.astro";
 import LinkButton from "./ui/LinkButton.astro";
-import Github from "./icons/github.astro";
 import Link from "./icons/link.astro";
 import React from "./icons/react.astro";
 import ChevronRight from "./icons/chevronRight.astro";
 import GitHubOutline from "./icons/gitHubOutline.astro";
-import TimeLine from "./TimeLine.astro";
 
 const TAGS = {
   ANGULAR: {
@@ -133,7 +131,8 @@ const projects = [
   },
 ];
 ---
-<div class="relative max-h-[1300px] overflow-hidden">
+
+<div id="projects-container" class="relative max-h-[1300px] overflow-hidden">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
     {
       projects.map(({ imagen, title, descripcion, tags, link, github }) => (
@@ -196,8 +195,6 @@ const projects = [
     </LinkButton>
   </div>
 </div>
-
-
 
 <div id="btn-ver-menos-projects-wrapper" class="hidden justify-center mt-6">
   <LinkButton id="btn-ver-menos-projects">
