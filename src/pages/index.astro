@@ -1,0 +1,86 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Hero from "../components/Hero.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import TitleSection from "../components/ui/TitleSection.astro";
+import Badge from "../components/ui/Badge.astro";
+import Education from "../components/Education.astro";
+---
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .profile-glow {
+    box-shadow: 0 0 50px -10px rgba(147, 51, 234, 0.3);
+  }
+</style>
+<Layout>
+  <main class="px-4">
+      <Hero />
+
+    <SectionContainer id="sobremi">
+       <TitleSection>
+      <Badge slot="badge" class="gap-2">
+        <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+        Sobre mí
+      </Badge>
+
+      <h1
+        class="text-4xl font-black text-slate-900 dark:text-white leading-tight"
+      >
+        Apasionado por el <span class="text-primary"
+          >Desarrollo de Software</span
+        > y el aprendizaje constante.
+      </h1>
+    </TitleSection>
+      <AboutMe />
+    </SectionContainer>
+
+    <SectionContainer>
+      <TitleSection>
+        Experiencia <span class="text-primary">Profesional</span>
+      </TitleSection>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer>
+      <TitleSection>
+        Habilidades <span class="text-primary">Técnicas</span>
+      </TitleSection>
+      <Skills />
+    </SectionContainer>
+
+    <SectionContainer>
+      <TitleSection>
+        Proyectos <span class="text-primary">Desarrollados</span>
+      </TitleSection>
+      <Projects />
+    </SectionContainer>
+    
+    <SectionContainer>
+      <TitleSection>
+        Formación <span class="text-primary">Académica</span>
+      </TitleSection>
+      <Education />
+    </SectionContainer>
+    
+
+  </main>
+</Layout>

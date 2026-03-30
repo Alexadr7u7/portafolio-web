@@ -1,0 +1,226 @@
+---
+import Card from "./ui/Card.astro";
+import Angular from "./icons/angular.astro";
+import Laravel from "./icons/laravel.astro";
+import Tailwindcss from "./icons/tailwind.astro";
+import Mysql from "./icons/mysql.astro";
+import Bootstrap from "./icons/bootstrap.astro";
+import Ionic from "./icons/ionic.astro";
+import AstroIcon from "./icons/astroicon.astro";
+import LinkButton from "./ui/LinkButton.astro";
+import Github from "./icons/github.astro";
+import Link from "./icons/link.astro";
+import React from "./icons/react.astro";
+import ChevronRight from "./icons/chevronRight.astro";
+import GitHubOutline from "./icons/gitHubOutline.astro";
+import TimeLine from "./TimeLine.astro";
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#8B1A10]/40 text-white",
+    icon: Angular,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#8B1A00]/40 text-white",
+    icon: Laravel,
+  },
+
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwindcss,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003A52] text-white",
+    icon: Mysql,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#3B1F6E]/40 text-white",
+    icon: Bootstrap,
+  },
+  IONIC: {
+    name: "Ionic",
+    class: "bg-[#1A3F8F] text-white",
+    icon: Ionic,
+  },
+  ASTROICON: {
+    name: "Astro",
+    class: "bg-black text-white",
+    icon: AstroIcon,
+  },
+   REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+};
+
+const projects = [
+  {
+    title: "dvinternet - Pagina Web",
+    descripcion:
+      "Sitio web informativo para una empresa de internet, desarrollado con HTML, CSS y PHP, con diseño responsivo y formulario de contacto funcional.",
+    imagen: "/projects/dvinternet.png",
+    tags: [TAGS.ASTROICON, TAGS.TAILWIND],
+    link: "https://dvinternet.com.mx",
+    github: "",
+  },
+  {
+    title: "dvinternet - Sistema de Gestión",
+    descripcion:
+      "Aplicación web desarrollada con Angular y Laravel para gestionar clientes, servicios, pagos y reportes administrativos de la empresa.",
+    imagen: "/projects/dv-system.png",
+    tags: [TAGS.MYSQL, TAGS.LARAVEL, TAGS.BOOTSTRAP],
+    link: "",
+    github: "",
+  },
+  {
+    title: "Roamsuite - Sistema de Gestión Hotelera",
+    descripcion:
+      "Plataforma web creada con Angular y Laravel para gestionar reservas, disponibilidad de habitaciones y administración de hoteles en línea.",
+    imagen: "/projects/roamsuite.png",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP],
+    link: "",
+    github: "",
+  },
+  {
+    title: "OlympusGym - Aplicación de rutinas para Gimnasios",
+    descripcion:
+      "Aplicación desarrollada en Ionic con Laravel como backend, enfocada en la gestión de rutinas, usuarios y control de asistencia para gimnasios.",
+    imagen: "/projects/olympusgym.png",
+    tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.IONIC],
+    link: "",
+    github: "",
+  },
+  {
+    title: "Abel Garcia - Plataforma de Cursos",
+    descripcion:
+      "Plataforma de cursos educativos para la enseñanza en línea, con gestión de cursos y lecciones, acceso a contenidos estructurados y una interfaz moderna enfocada en una experiencia de aprendizaje clara y sencilla.",
+    imagen: "/projects/abel-garcia.png",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    link: "",
+    github: "",
+  },
+    {
+    title: "Abel Garcia - Sistema de Gestión de Cursos",
+    descripcion:" Sistema de gestión para la plataforma de cursos, desarrollado con React y Laravel, que permite administrar cursos, lecciones, usuarios y contenido educativo de manera eficiente.",
+    imagen: "/projects/system-abel.png",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.REACT],
+    link: "",
+    github: "",
+  },
+  {
+    title: "Rick and Morty API - Explorador de Personajes",
+    descripcion:
+      "Aplicación web desarrollada con Angular y TailwindCSS que consume la API de Rick and Morty. Permite explorar personajes, episodios y ubicaciones con filtros avanzados, paginación y modales interactivos.",
+    imagen: "/projects/rickandmorty.png",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND],
+    link: "https://rickandmorty-api-two.vercel.app/",
+    github: "https://github.com/Alexadr7u7/rickandmorty-api.git",
+  },
+  {
+    title: "Galería de Fotografías - Sitio Web Personal",
+    descripcion:
+      "Sitio web desarrollado con Astro y TailwindCSS, diseñado como una galería estética de imágenes personales. Ofrece un diseño responsivo, optimización de carga y una experiencia visual fluida enfocada en la inspiración visual y los paisajes.",
+    imagen: "/projects/gallery.png",
+    tags: [TAGS.ASTROICON, TAGS.TAILWIND],
+    link: "https://gallery-zeta-swart.vercel.app/",
+    github: "https://github.com/Alexadr7u7/gallery.git",
+  },
+];
+---
+<div class="relative max-h-[1300px] overflow-hidden">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+    {
+      projects.map(({ imagen, title, descripcion, tags, link, github }) => (
+        <Card class="flex flex-col gap-4">
+          <div class="w-full overflow-hidden">
+            <img
+              src={imagen}
+              alt={title}
+              class="shadow-sm w-full object-cover transition-all duration-300 hover:scale-110"
+              style="height: 250px"
+            />
+          </div>
+          <div class="flex flex-col justify-between flex-grow min-h-[220px] px-6 pb-6">
+            <div>
+              <h3 class="text-2xl font-semibold dark:text-white text-black">
+                {title}
+              </h3>
+              <p class="mt-1 mb-2 text-gray-700 dark:text-gray-400">
+                {descripcion}
+              </p>
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHubOutline class="size-4" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+
+  <div
+    id="projects-fade"
+    class="absolute bottom-0 left-0 right-0 h-60 flex items-end justify-center "
+    style="background: linear-gradient(to top, var(--bg) 20%, transparent 100%);"
+  >
+    <LinkButton id="btn-ver-mas-projects">
+      Ver más proyectos
+      <ChevronRight class="size-6" />
+    </LinkButton>
+  </div>
+</div>
+
+
+
+<div id="btn-ver-menos-projects-wrapper" class="hidden justify-center mt-6">
+  <LinkButton id="btn-ver-menos-projects">
+    Ver menos
+  </LinkButton>
+</div>
+
+<script>
+  const container = document.getElementById("projects-container");
+  const overlay = document.getElementById("projects-fade");
+  const verMenosWrapper = document.getElementById("btn-ver-menos-projects-wrapper");
+
+  document.getElementById("btn-ver-mas-projects")?.addEventListener("click", () => {
+    container?.classList.remove("max-h-[1300px]");
+    overlay?.classList.add("hidden");
+    verMenosWrapper?.classList.remove("hidden");
+    verMenosWrapper?.classList.add("flex");
+  });
+
+  document.getElementById("btn-ver-menos-projects")?.addEventListener("click", () => {
+    container?.classList.add("max-h-[1300px]");
+    overlay?.classList.remove("hidden");
+    verMenosWrapper?.classList.add("hidden");
+    verMenosWrapper?.classList.remove("flex");
+  });
+</script>

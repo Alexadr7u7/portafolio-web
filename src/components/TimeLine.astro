@@ -1,0 +1,16 @@
+---
+const { class: className, id } = Astro.props
+---
+
+<div class="relative  overflow-hidden" id={id}>
+  <div class="relative space-y-12 pb-10">
+    <div
+      class="absolute left-4 md:left-8 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary/50 via-primary/20 to-transparent"
+    >
+
+    </div>
+
+    <slot/>
+  </div>
+
+</div>

@@ -1,0 +1,78 @@
+---
+import ChevronDown from "./icons/chevronDown.astro";
+import Cv from "./icons/cv.astro";
+import Email from "./icons/email.astro";
+import GitHubOutline from "./icons/gitHubOutline.astro";
+import Badge from "./ui/Badge.astro";
+import LinkSocial from "./ui/LinkSocial.astro";
+---
+
+<style>
+  .typewriter {
+    display: inline-block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 3px solid;
+    overflow: hidden;
+    animation:
+      typing 2.5s steps(28) forwards,
+      blink 1s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 28ch; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+
+</style>
+
+<div
+  class="relative min-h-[600px] flex flex-col items-center justify-center px-6 py-30"
+  id="inicio"
+>
+  <div class="max-w-4xl w-full flex flex-col items-center text-center space-y-8">
+
+    <Badge >
+        Disponible para proyectos
+    </Badge>
+
+    <div class="space-y-2">
+      <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-text-base">
+        Hey, soy
+      </h1>
+      <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+        <span class="gradient-text">Alexander Lazcano</span>
+      </h1>
+    </div>
+
+    <p class="font-mono text-lg md:text-2xl text-primary font-medium">
+      <span class="typewriter">&lt;Desarrollador Fullstack Jr /&gt;</span>
+    </p>
+
+    <div class="flex items-center gap-4 flex-wrap justify-center">
+      <div class="flex items-center gap-3">
+        <LinkSocial href="">
+          <GitHubOutline />
+        </LinkSocial>
+        
+        <LinkSocial href="alexander.lazcano@outlook.com ">
+          <Email />
+        </LinkSocial>
+        <LinkSocial href="/CV-Alexander-Lazcano.pdf" download>
+          <Cv />
+          Descargar CV
+        </LinkSocial>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-white ">
+   <ChevronDown/>
+  </div>
+</div>

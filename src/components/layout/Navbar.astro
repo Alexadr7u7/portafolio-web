@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import logoDark from "../../assets/img/logo-dark.png";
+import logoLight from "../../assets/img/logo-light.png";
+import ToggleTheme from "../ui/ToggleTheme.astro";
+import Menu from "../icons/menu.astro";
+
+const navLinks = [
+  { title: "Inicio", url: "#home", label: "Inicio" },
+  { title: "Sobre Mí", url: "#about", label: "Sobre Mí" },
+  { title: "Habilidades", url: "#skills", label: "Habilidades" },
+  { title: "Proyectos", url: "#projects", label: "Proyectos" },
+];
+---
+
+<style>
+  .header-scroll {
+    --header-opacity: 0;
+    background: rgb(255 255 255 / calc(var(--header-opacity) * 0.9));
+    border-color: rgb(226 232 240 / var(--header-opacity));
+    backdrop-filter: blur(calc(var(--header-opacity) * 8px));
+  }
+
+  :global(.dark) .header-scroll {
+    background: rgb(15 23 42 / calc(var(--header-opacity) * 0.9));
+    border-color: rgb(51 65 85 / var(--header-opacity));
+  }
+
+  .logo-scroll {
+    --logo-opacity: 0;
+    opacity: var(--logo-opacity);
+    transform: translateY(calc((1 - var(--logo-opacity)) * 20px));
+    transition:
+      opacity 0.1s,
+      transform 0.1s;
+  }
+</style>
+
+<header
+  id="header"
+  class="header-scroll sticky top-0 z-50 w-full mt-5 rounded-2xl dark:shadow-lg border max-w-4xl mx-auto px-5"
+>
+  <div class="mx-auto px-7">
+    <nav
+      class="flex items-center justify-between flex-wrap py-5 rounded-2xl sm:flex-nowrap"
+    >
+      <div id="logo-container" class="logo-scroll flex-shrink-0">
+        <a href="/">
+          <Image src={logoLight} alt="logo" class="w-36 block dark:hidden" />
+          <Image
+            src={logoDark}
+            alt="logo dark"
+            class="w-36 hidden dark:block"
+          />
+        </a>
+      </div>
+
+      <div class="flex sm:hidden items-center gap-3">
+        <ToggleTheme />
+        <button
+          id="menu-btn"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          class="text-2xl"
+        >
+          <Menu />
+        </button>
+      </div>
+
+      <div
+        id="menu"
+        class="hidden w-full sm:flex sm:w-auto sm:items-center sm:gap-4"
+      >
+        <ul
+          class="flex flex-col items-center gap-4 py-4 sm:flex-row sm:gap-2 sm:py-0"
+        >
+          {
+            navLinks.map((link) => (
+              <li>
+                <a
+                  href={link.url}
+                  aria-label={link.label}
+                  class="hover:text-primary font-bold text-sm py-2 px-3 text-text-base  transition-all duration-300"
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+        </ul>
+
+        <div class="hidden sm:block">
+          <ToggleTheme />
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      const isHidden = menu.classList.toggle("hidden");
+      btn.setAttribute("aria-expanded", String(!isHidden));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menu.classList.contains("hidden")) {
+        menu.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+        btn.focus();
+      }
+    });
+  }
+
+  const header = document.getElementById("header");
+  const logoContainer = document.getElementById("logo-container");
+
+  window.addEventListener("scroll", () => {
+    const progress = Math.min(window.scrollY / 100, 1);
+    header?.style.setProperty("--header-opacity", String(progress));
+    logoContainer?.style.setProperty("--logo-opacity", String(progress));
+  });
+</script>

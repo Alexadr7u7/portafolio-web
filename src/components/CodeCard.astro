@@ -1,0 +1,83 @@
+---
+import Code from "./icons/code.astro";
+import Card from "./ui/Card.astro";
+---
+
+<Card class="p-6"}>
+  <div
+    class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+  >
+    <Code />
+  </div>
+
+  <div class="flex items-center gap-2 mb-6">
+    <div class="size-3 rounded-full bg-red-500/80"></div>
+    <div class="size-3 rounded-full bg-yellow-500/80"></div>
+    <div class="size-3 rounded-full bg-green-500/80"></div>
+    <span
+      class="ml-4 text-xs font-mono text-slate-400 dark:text-slate-500 italic"
+      >// about_me.js</span
+    >
+  </div>
+
+  <div
+    class="font-mono text-sm md:text-base space-y-2 text-slate-800 dark:text-slate-200"
+  >
+    <p>
+      <span class="text-primary font-semibold">const</span>
+      <span class="text-slate-900 dark:text-white">AboutMe</span>
+      <span class="text-slate-500">=</span>
+      <span class="text-slate-500">{`{`}</span>
+    </p>
+    <p class="pl-6">
+      <span class="text-blue-600 dark:text-blue-400">name</span><span
+        class="text-slate-500">:</span
+      >
+      <span class="text-emerald-600 dark:text-green-400"
+        >"Alan Alexander Lazcano Romero"</span
+      ><span class="text-slate-500">,</span>
+    </p>
+    <p class="pl-6">
+      <span class="text-blue-600 dark:text-blue-400">goal</span><span
+        class="text-slate-500">:</span
+      >
+      <span class="text-emerald-600 dark:text-green-400"
+        >"Seguir creciendo y construir cosas que importen"</span
+      ><span class="text-slate-500">,</span>
+    </p>
+    <p class="pl-6">
+      <span class="text-blue-600 dark:text-blue-400">passion</span><span
+        class="text-slate-500">:</span
+      >
+      <span class="text-slate-500">[</span><span
+        class="text-emerald-600 dark:text-green-400">"Leer"</span
+      ><span class="text-slate-500">,</span>
+      <span class="text-emerald-600 dark:text-green-400">"Dibujar"</span><span
+        class="text-slate-500">,</span
+      >
+      <span class="text-emerald-600 dark:text-green-400">"Anime"</span><span
+        class="text-slate-500">,</span
+      >
+      <span class="text-emerald-600 dark:text-green-400">"Tuning"</span><span
+        class="text-slate-500">,</span
+      >
+      <span class="text-emerald-600 dark:text-green-400">"Programar"</span><span
+        class="text-slate-500">,</span
+      >
+      <span class="text-emerald-600 dark:text-green-400">"Musicá"</span><span
+        class="text-slate-500">]</span
+      ><span class="text-slate-500">,</span>
+    </p>
+    <p class="pl-6">
+      <span class="text-blue-600 dark:text-blue-400">location</span><span
+        class="text-slate-500">:</span
+      >
+      <span class="text-emerald-600 dark:text-green-400">"CDMX / Puebla"</span>
+    </p>
+    <p>
+      <span class="text-slate-500">{`}`}</span><span class="text-slate-500"
+        >;</span
+      >
+    </p>
+  </div>
+</Card>

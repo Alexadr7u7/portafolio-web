@@ -1,0 +1,121 @@
+---
+import Ionic from "./icons/ionic.astro";
+import Star from "./icons/star.astro";
+import Card from "./ui/Card.astro";
+
+interface Skill {
+  name: string;
+  icon: string;
+  component?: any;
+}
+interface SkillCategory {
+  title: string;
+  skills: Skill[];
+}
+
+const categorias: SkillCategory[] = [
+  {
+    title: "Frontend",
+    skills: [
+      { name: "CSS", icon: "css" },
+      { name: "Angular", icon: "angular" },
+      { name: "HTML", icon: "html" },
+      { name: "Bootstrap", icon: "bootstrap" },
+      { name: "TailwindCSS", icon: "tailwind" },
+      { name: "TypeScript", icon: "ts" },
+      { name: "JavaScript", icon: "js" },
+      { name: "Astro", icon: "astro" },
+      { name: "React", icon: "react" },
+
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "PHP", icon: "php" },
+      { name: "C#", icon: "cs" },
+      { name: "Java", icon: "java" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Laravel", icon: "laravel" },
+      { name: ".NET", icon: "dotnet" },
+    ],
+  },
+  {
+    title: "Bases de Datos",
+    skills: [
+      { name: "Postgres", icon: "postgres" },
+      { name: "Firebase", icon: "firebase" },
+      { name: "MongoDB", icon: "mongodb" },
+      { name: "MySQL", icon: "mysql" },
+    ],
+  },
+  {
+    title: "Herramientas",
+    skills: [
+      { name: "Git", icon: "git" },
+      { name: "Discord", icon: "discord" },
+      { name: "Figma", icon: "figma" },
+      { name: "GitHub", icon: "github" },
+      { name: "Postman", icon: "postman" },
+      { name: "Unity", icon: "unity" },
+      { name: "NPM", icon: "npm" },
+      { name: "VS Code", icon: "vscode" },
+      { name: "Vercel", icon: "vercel" },
+    ],
+  },
+  {
+    title: "Móvil",
+    skills: [
+      { name: "Ionic", icon: "", component: Ionic },
+      { name: "Flutter", icon: "flutter" },
+      { name: "Android Studio", icon: "androidstudio" },
+      { name: "Dart", icon: "dart" },
+    ],
+  },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    categorias.map((categoria) => (
+      <Card class="flex flex-col min-h-[300px] transition-colors p-6">
+        <div class="flex items-center gap-3 mb-6 justify-center">
+         
+          <h3 class="text-lg font-bold text-text-base">{categoria.title}</h3>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <div class="grid grid-cols-3 gap-4">
+            {categoria.skills.map((skill) => (
+              <div class="group/skill relative flex items-center justify-center">
+                {skill.component ? (
+                  <skill.component class="w-12 h-12" />
+                ) : (
+                  <img
+                    src={`https://skillicons.dev/icons?i=${skill.icon}`}
+                    alt={skill.name}
+                    class="size-12 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+                  />
+                )}
+                <span class="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-700 text-white text-xs font-medium px-2 py-1 rounded-md opacity-0 group-hover/skill:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Card>
+    ))
+  }
+  <div
+    class="bg-card rounded-2xl p-6 flex flex-col items-center justify-center text-center min-h-[300px] border border-border border-dashed"
+  >
+    <Star />
+    <p class="text-primary font-bold uppercase tracking-widest text-sm mb-3">
+      Aprendizaje Continuo
+    </p>
+    <p class="text-text-base text-sm leading-relaxed">
+      Siempre explorando nuevas tecnologías para resolver problemas complejos.
+    </p>
+  </div>
+</div>

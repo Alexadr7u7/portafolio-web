@@ -1,0 +1,77 @@
+---
+import "@fontsource-variable/onest";
+import Navbar from "../components/layout/Navbar.astro";
+import ScrollTop from "../components/layout/ScrollTop.astro";
+import Footer from "../components/layout/Footer.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio de Alexander - Desarrollador Fullstack JR</title>
+    <script is:inline>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return "dark";
+      };
+
+      const isDark = getThemePreference() === "dark";
+      document.documentElement.classList.toggle("dark", isDark);
+    </script>
+  </head>
+  <body class="bg-bg">
+    <Navbar />
+    <slot />
+    <ScrollTop/>
+    
+    <SectionContainer>
+       <Footer/>
+    </SectionContainer>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: "Onest Variable", sans-serif;
+  }
+</style>
+<style is:global>
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+<div
+  id="scroll-progress"
+  class="fixed top-0 left-0 h-0.5 bg-primary z-[9999] transition-all duration-100"
+  style="width: 0%;"
+>
+</div>
+
+<script>
+  const bar = document.getElementById('scroll-progress');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    bar?.style.setProperty('width', `${progress}%`);
+  });
+</script>
