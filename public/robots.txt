@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portafolio-web-rosy.vercel.app/sitemap-index.xml

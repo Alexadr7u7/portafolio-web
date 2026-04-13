@@ -1,8 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
-// https://astro.build/config
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
+
+   site: 'https://portafolio-web-rosy.vercel.app',
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
