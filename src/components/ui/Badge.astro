@@ -1,13 +1,19 @@
 ---
-const { class: className, ...rest } = Astro.props;
+const { class: className, animated = false, ...rest } = Astro.props;
 ---
 
 <div class="flex items-center" {...rest}>
   <span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
-    <span
+    
+    {animated ? (
+         <span
       class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#7946e3_0%,#3d1f7a_50%,#7946e3_100%)]"
     ></span>
-    <div class:list={["inline-flex items-center justify-center w-full px-3 py-1 text-sm text-primary rounded-full  bg-card dark:text-white/80 backdrop-blur-3xl whitespace-nowrap", className]}>
+    ) : (
+      <span class="absolute inset-0 rounded-full bg-primary" />
+    )}
+
+    <div class:list={["inline-flex items-center justify-center w-full px-3 py-1 text-sm text-primary rounded-full bg-card dark:text-white/80 backdrop-blur-3xl whitespace-nowrap", className]}>
       <slot />
     </div>
   </span>
