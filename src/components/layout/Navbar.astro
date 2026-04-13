@@ -4,6 +4,7 @@ import logoDark from "../../assets/img/logo-dark.png";
 import logoLight from "../../assets/img/logo-light.png";
 import ToggleTheme from "../ui/ToggleTheme.astro";
 import Menu from "../icons/menu.astro";
+import GitHubOutline from "../icons/gitHubOutline.astro";
 
 const navLinks = [
   { title: "Inicio", url: "#home", label: "Inicio" },
@@ -52,10 +53,16 @@ const navLinks = [
             alt="logo dark"
             class="w-36 hidden dark:block"
           />
-        </a>  
+        </a>
       </div>
 
       <div class="flex sm:hidden items-center gap-3">
+        <a href="https://github.com/Alexadr7u7/portafolio-web">
+          <GitHubOutline
+            class="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200"
+          />
+        </a>
+
         <ToggleTheme />
         <button
           id="menu-btn"
@@ -87,42 +94,46 @@ const navLinks = [
               </li>
             ))
           }
-          <li>
         </ul>
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://github.com/Alexadr7u7/portafolio-web">
+            <GitHubOutline
+              class="text-slate-400 transition-colors hover:text-slate-600 dark:hover:text-slate-200"
+            />
+          </a>
 
-        <div class="hidden sm:block">
           <ToggleTheme />
         </div>
       </div>
     </nav>
   </div>
+
+  <script>
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isHidden = menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!isHidden));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !menu.classList.contains("hidden")) {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+          btn.focus();
+        }
+      });
+    }
+
+    const header = document.getElementById("header");
+    const logoContainer = document.getElementById("logo-container");
+
+    window.addEventListener("scroll", () => {
+      const progress = Math.min(window.scrollY / 100, 1);
+      header?.style.setProperty("--header-opacity", String(progress));
+      logoContainer?.style.setProperty("--logo-opacity", String(progress));
+    });
+  </script>
 </header>
-
-<script>
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-
-  if (btn && menu) {
-    btn.addEventListener("click", () => {
-      const isHidden = menu.classList.toggle("hidden");
-      btn.setAttribute("aria-expanded", String(!isHidden));
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !menu.classList.contains("hidden")) {
-        menu.classList.add("hidden");
-        btn.setAttribute("aria-expanded", "false");
-        btn.focus();
-      }
-    });
-  }
-
-  const header = document.getElementById("header");
-  const logoContainer = document.getElementById("logo-container");
-
-  window.addEventListener("scroll", () => {
-    const progress = Math.min(window.scrollY / 100, 1);
-    header?.style.setProperty("--header-opacity", String(progress));
-    logoContainer?.style.setProperty("--logo-opacity", String(progress));
-  });
-</script>
