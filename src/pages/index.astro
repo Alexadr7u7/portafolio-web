@@ -33,23 +33,16 @@ import Education from "../components/Education.astro";
 </style>
 <Layout>
   <main class="px-4">
-      <Hero />
+    <Hero />
 
     <SectionContainer id="sobremi">
-       <TitleSection>
-      <Badge slot="badge" class="gap-2">
-        <span class="size-2 rounded-full bg-primary animate-pulse"></span>
-        Sobre mí
-      </Badge>
-
-      <h1
-        class="text-4xl font-black text-slate-900 dark:text-white leading-tight"
-      >
-        Apasionado por el <span class="text-primary"
-          >Desarrollo de Software</span
-        > y el aprendizaje constante.
-      </h1>
-    </TitleSection>
+      <TitleSection>
+        <Badge slot="badge" class="gap-2">
+          <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+          Sobre mí
+        </Badge>
+        Apasionado por el <span class="text-primary">Desarrollo de Software</span> y el aprendizaje constante.
+      </TitleSection>
       <AboutMe />
     </SectionContainer>
 
@@ -73,14 +66,12 @@ import Education from "../components/Education.astro";
       </TitleSection>
       <Projects />
     </SectionContainer>
-    
+
     <SectionContainer>
       <TitleSection>
         Formación <span class="text-primary">Académica</span>
       </TitleSection>
       <Education />
     </SectionContainer>
-    
-
   </main>
 </Layout>
