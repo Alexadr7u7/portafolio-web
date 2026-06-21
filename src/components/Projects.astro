@@ -50,7 +50,7 @@ const TAGS = {
     class: "bg-black text-white",
     icon: AstroIcon,
   },
-   REACT: {
+  REACT: {
     name: "React",
     class: "bg-black text-white",
     icon: React,
@@ -66,6 +66,7 @@ const projects = [
     tags: [TAGS.ASTROICON, TAGS.TAILWIND],
     link: "https://www.dvinternet.com.mx",
     github: "",
+    enDesarrollo: false,
   },
   {
     title: "dvinternet - Sistema de Gestión",
@@ -75,6 +76,7 @@ const projects = [
     tags: [TAGS.MYSQL, TAGS.LARAVEL, TAGS.BOOTSTRAP],
     link: "",
     github: "",
+    enDesarrollo: false,
   },
   {
     title: "Roamsuite - Sistema de Gestión Hotelera",
@@ -84,6 +86,7 @@ const projects = [
     tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP],
     link: "",
     github: "",
+    enDesarrollo: false,
   },
   {
     title: "OlympusGym - Aplicación de rutinas para Gimnasios",
@@ -93,6 +96,7 @@ const projects = [
     tags: [TAGS.ANGULAR, TAGS.BOOTSTRAP, TAGS.IONIC],
     link: "",
     github: "",
+    enDesarrollo: false,
   },
   {
     title: "Abel Garcia - Plataforma de Cursos",
@@ -102,14 +106,17 @@ const projects = [
     tags: [TAGS.ANGULAR, TAGS.TAILWIND],
     link: "",
     github: "",
+    enDesarrollo: false,
   },
-    {
+  {
     title: "Abel Garcia - Sistema de Gestión de Cursos",
-    descripcion:" Sistema de gestión para la plataforma de cursos, que permite administrar cursos, lecciones, usuarios y contenido educativo de manera eficiente.",
+    descripcion:
+      " Sistema de gestión para la plataforma de cursos, que permite administrar cursos, lecciones, usuarios y contenido educativo de manera eficiente.",
     imagen: "/projects/system-abel.webp",
     tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.REACT],
     link: "",
     github: "",
+    enDesarrollo: false,
   },
   {
     title: "Rick and Morty API - Explorador de Personajes",
@@ -119,6 +126,7 @@ const projects = [
     tags: [TAGS.ANGULAR, TAGS.TAILWIND],
     link: "https://rickandmorty-api-two.vercel.app/",
     github: "https://github.com/Alexadr7u7/rickandmorty-api.git",
+    enDesarrollo: false,
   },
   {
     title: "Galería de Fotografías - Sitio Web Personal",
@@ -128,65 +136,89 @@ const projects = [
     tags: [TAGS.ASTROICON, TAGS.TAILWIND],
     link: "https://gallery-zeta-swart.vercel.app/",
     github: "https://github.com/Alexadr7u7/gallery.git",
+    enDesarrollo: false,
   },
+{
+  title: "Truchero Tenerife - Página Web",
+  descripcion:
+    "Sitio web para promocionar el Truchero Tenerife. Incluye información sobre los servicios, ubicación, galería de imágenes, detalles de las cabañas y un sistema de reservas que permite a los visitantes consultar disponibilidad y agendar su estancia de forma sencilla desde cualquier dispositivo.",
+  imagen: "/projects/truchero-tenerife.webp",
+  tags: [TAGS.ASTROICON, TAGS.TAILWIND],
+  link: "",
+  github: "",
+  enDesarrollo: true,
+},
 ];
 ---
 
 <div id="projects-container" class="relative max-h-[1300px] overflow-hidden">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
     {
-      projects.map(({ imagen, title, descripcion, tags, link, github }) => (
-        <Card class="flex flex-col gap-4">
-          <div class="w-full overflow-hidden">
-            <img
-              src={imagen}
-              alt={title}
-              class="shadow-sm w-full object-cover transition-all duration-300 hover:scale-110"
-              style="height: 250px"
-            />
-          </div>
-          <div class="flex flex-col justify-between flex-grow min-h-[220px] px-6 pb-6">
-            <div>
-              <h2 class="text-2xl font-semibold dark:text-white text-black">
-                {title}
-              </h2>
-              <p class="mt-1 mb-2 text-gray-700 dark:text-gray-400">
-                {descripcion}
-              </p>
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+      projects.map(
+        ({ imagen, title, descripcion, tags, link, github, enDesarrollo }) => (
+          <Card class="flex flex-col gap-4">
+            <div class="w-full relative overflow-visible" style="height: 250px">
+              <img
+                src={imagen}
+                alt={title}
+                class="shadow-sm w-full h-full object-cover transition-all duration-300 hover:scale-110"
+              />
+              {enDesarrollo && (
+                <div
+                  class="absolute inset-0 bg-black/70 flex items-center justify-center"
+                  style="z-index: 9999"
+                >
+                  <span class="text-white text-xl font-semibold ">
+                    Próximamente
+                  </span>
+                </div>
+              )}
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHubOutline class="size-4" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
-          </div>
-        </Card>
-      ))
+            <div class="flex flex-col justify-between flex-grow min-h-[220px] px-6 pb-6">
+              <div>
+                <h2 class="text-2xl font-semibold dark:text-white text-black">
+                  {title}
+                </h2>
+                <p class="mt-1 mb-2 text-gray-700 dark:text-gray-400">
+                  {descripcion}
+                </p>
+                <ul class="flex flex-row mb-2 gap-x-2">
+                  {tags.map((tag) => (
+                    <li>
+                      <span
+                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                      >
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <LinkButton href={github}>
+                    <GitHubOutline class="size-4" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Preview
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </Card>
+        ),
+      )
     }
   </div>
 
   <div
     id="projects-fade"
-    class="absolute bottom-0 left-0 right-0 h-60 flex items-end justify-center "
+    class="absolute bottom-0 left-0 right-0 h-60 flex items-end justify-center"
     style="background: linear-gradient(to top, var(--bg) 20%, transparent 100%);"
   >
     <LinkButton id="btn-ver-mas-projects">
@@ -197,27 +229,31 @@ const projects = [
 </div>
 
 <div id="btn-ver-menos-projects-wrapper" class="hidden justify-center mt-6">
-  <LinkButton id="btn-ver-menos-projects">
-    Ver menos
-  </LinkButton>
+  <LinkButton id="btn-ver-menos-projects"> Ver menos </LinkButton>
 </div>
 
 <script>
   const container = document.getElementById("projects-container");
   const overlay = document.getElementById("projects-fade");
-  const verMenosWrapper = document.getElementById("btn-ver-menos-projects-wrapper");
+  const verMenosWrapper = document.getElementById(
+    "btn-ver-menos-projects-wrapper",
+  );
 
-  document.getElementById("btn-ver-mas-projects")?.addEventListener("click", () => {
-    container?.classList.remove("max-h-[1300px]");
-    overlay?.classList.add("hidden");
-    verMenosWrapper?.classList.remove("hidden");
-    verMenosWrapper?.classList.add("flex");
-  });
+  document
+    .getElementById("btn-ver-mas-projects")
+    ?.addEventListener("click", () => {
+      container?.classList.remove("max-h-[1300px]");
+      overlay?.classList.add("hidden");
+      verMenosWrapper?.classList.remove("hidden");
+      verMenosWrapper?.classList.add("flex");
+    });
 
-  document.getElementById("btn-ver-menos-projects")?.addEventListener("click", () => {
-    container?.classList.add("max-h-[1300px]");
-    overlay?.classList.remove("hidden");
-    verMenosWrapper?.classList.add("hidden");
-    verMenosWrapper?.classList.remove("flex");
-  });
+  document
+    .getElementById("btn-ver-menos-projects")
+    ?.addEventListener("click", () => {
+      container?.classList.add("max-h-[1300px]");
+      overlay?.classList.remove("hidden");
+      verMenosWrapper?.classList.add("hidden");
+      verMenosWrapper?.classList.remove("flex");
+    });
 </script>

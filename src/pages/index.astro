@@ -33,15 +33,19 @@ import Education from "../components/Education.astro";
 </style>
 <Layout>
   <main class="px-4">
-    <Hero />
+    <section id="home">
+      <Hero />
+    </section>
 
-    <SectionContainer id="sobremi">
+    <SectionContainer id="about">
       <TitleSection>
         <Badge slot="badge" class="gap-2">
           <span class="size-2 rounded-full bg-primary animate-pulse"></span>
           Sobre mí
         </Badge>
-        Apasionado por el <span class="text-primary">Desarrollo de Software</span> y el aprendizaje constante.
+        Apasionado por el <span class="text-primary"
+          >Desarrollo de Software</span
+        > y el aprendizaje constante.
       </TitleSection>
       <AboutMe />
     </SectionContainer>
@@ -53,14 +57,14 @@ import Education from "../components/Education.astro";
       <Experience />
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="skills">
       <TitleSection>
         Habilidades <span class="text-primary">Técnicas</span>
       </TitleSection>
       <Skills />
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="projects">
       <TitleSection>
         Proyectos <span class="text-primary">Desarrollados</span>
       </TitleSection>
