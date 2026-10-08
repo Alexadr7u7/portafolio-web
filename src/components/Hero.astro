@@ -20,29 +20,34 @@ import LinkSocial from "./ui/LinkSocial.astro";
   }
 
   @keyframes typing {
-    from { width: 0; }
-    to { width: 28ch; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 28ch;
+    }
   }
 
   @keyframes blink {
-    50% { border-color: transparent; }
+    50% {
+      border-color: transparent;
+    }
   }
-
-
 </style>
 
 <div
   class="relative min-h-[600px] flex flex-col items-center justify-center px-6 py-30"
   id="inicio"
 >
-  <div class="max-w-4xl w-full flex flex-col items-center text-center space-y-8">
-
-    <Badge animated>
-        Disponible para proyectos
-    </Badge>
+  <div
+    class="max-w-4xl w-full flex flex-col items-center text-center space-y-8"
+  >
+    <Badge animated> Disponible para proyectos </Badge>
 
     <div class="space-y-2">
-      <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-text-base">
+      <h1
+        class="text-5xl md:text-7xl font-black leading-tight tracking-tight text-text-base"
+      >
         Hey, soy
       </h1>
       <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
@@ -56,23 +61,34 @@ import LinkSocial from "./ui/LinkSocial.astro";
 
     <div class="flex items-center gap-4 flex-wrap justify-center">
       <div class="flex items-center gap-3">
-        <LinkSocial href="https://github.com/Alexadr7u7"  aria-label="Perfil de GitHub">
+        <LinkSocial
+          href="https://github.com/Alexadr7u7"
+          aria-label="Perfil de GitHub"
+        >
           <GitHubOutline />
         </LinkSocial>
-        
-        <LinkSocial href="alexander.lazcano@outlook.com "   aria-label="Enviar correo a alexander.lazcano@outlook.com">
+
+        <LinkSocial
+          href="alexander.lazcano@outlook.com "
+          aria-label="Enviar correo a alexander.lazcano@outlook.com"
+        >
           <Email />
         </LinkSocial>
-        <LinkSocial href="/CV-Alexander-Lazcano.pdf"   aria-label="Descargar cv de Alexander" download>
+        <LinkSocial
+          href="/CV-Alan-Alexander-Lazcano.pdf"
+          aria-label="Descargar cv de Alexander"
+          download
+        >
           <Cv />
           Descargar CV
         </LinkSocial>
       </div>
     </div>
-
   </div>
 
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-white ">
-   <ChevronDown/>
+  <div
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-white"
+  >
+    <ChevronDown />
   </div>
 </div>
